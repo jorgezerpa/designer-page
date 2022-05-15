@@ -1,0 +1,70 @@
+            /* header animations */
+.header-avatar-animation{
+    transform: rotate(-270deg) scale(.2);
+    animation: zoomInSpin 1.4s ease forwards;
+    animation-play-state: paused;
+}
+.header-title-animation{
+    opacity: 0;
+    animation: fadeIn 2s linear forwards;
+    animation-delay: 1.3s;
+    animation-play-state: paused;
+}
+.header-star-animation{
+    fill: #f00;
+    filter: hue-rotate(240deg);
+    animation: colorHueChange 1s linear infinite;
+}
+
+@keyframes zoomInSpin{
+    0%{transform: rotate(-370deg) scale(.2);}
+    100%{transform: rotate(0deg) scale(1);}
+}
+@keyframes fadeIn{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+@keyframes colorHueChange{
+    0%{filter: hue-rotate(0deg);}
+    100%{filter: hue-rotate(360deg);}
+}
+
+
+
+        /* portfolio animations  */
+.portfolio-item-container{
+    transform: translateY(300px) scaleX(0);
+    transition: 1s all;
+}
+.portfolio-item-container.animate-me{
+    transform: translateY(0) scaleX(1);
+}
+
+        /* about animations  */
+.about-text-left{
+    transform: translate(-100px, 50px);
+    transition: 1s all;
+}
+.about-text-right{
+    transform: translate(100px, 50px);
+    transition: 1s all;
+}
+.about-text-right.animate-me, .about-text-left.animate-me{
+    transform: translate(0px, 0px);
+}
+
+@media screen and (max-width: 1000px) {
+    .about-text-right, .about-text-left{
+        transform: translate(0px, 0px);
+    }
+}
+
+
+        /* hovers  */
+#submitButton:hover{
+    z-index: 100000;
+    transform: scale(.8);
+}
+
+
+
